@@ -1,43 +1,37 @@
-nav.nav-extended
+.logo.center
+  a.brand-logo href="#"
+    = image_tag 'zc-caligraphy-logo.jpg', width: 200 
+
+nav.nav-extended.transparent.center
     .nav-wrapper
-      a.brand-logo href="#"
-        | Logo
-      a.button-collapse href="#" data-activates="mobile-demo"
-        i.material-icons 
-          | menu
-      ul#nav-mobile.right.hide-on-med-and-down
-        li
-          a href="#"
-            | Sass
-        li
-          a href="#"
-            | Components
-        li
-          a href="#"
-            | JavaScript
+      /a.button-collapse href="#" data-activates="mobile-demo"
+      /  i.material-icons menu 
 
-      ul.side-nav#mobile-demo
+      ul#nav-mobile.center
         li
-          a href="sass.html" 
-            | Sass
+          a href="#"
+            | Home
         li
-          a href="badges.html"
-            | Components
+          a href="#"
+            | About
         li
-          a href="collapsible.html" 
-            | JavaScript
+          a href="#"
+            | Contact
+        li
+          a href="#"
+            | Products
+        li
+          a href="#"
+            | Cart (0)
 
-    .nav-content
-      ul.tabs.tabs-transparent
-        li.tab
-          a href="#test1" 
-            | Test 1
-        li.tab
-          a.active href="#test2"
-            | Test 2
-        li.tab.disabled
-          a href="#test3"
-            | Disabled Tab
-        li.tab
-          a href="#test4"
-            | Test 4
+
+      /ul.side-nav#mobile-demo
+      /  li
+      /    a href="sass.html" 
+      /      | Sass
+      /  li
+      /    a href="badges.html"
+      /      | Components
+      /  li
+      /    a href="collapsible.html" 
+      /      | JavaScript
