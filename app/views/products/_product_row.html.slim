@@ -1,17 +1,15 @@
 .col.s12.m6.l4
-  .card
+  .card.hoverable
     .card-image
       = image_tag 'http://materializecss.com/images/sample-1.jpg'
       span.card-title = product.name
     .card-content
       | Unit Price: 
       span[style="color: green"] = number_to_currency product.price 
-    .card-action
+    .card-action.center-align
       = form_for order_item, remote: true do |f| 
-        .col.s6
+        .col.s3.offset-s1
           = f.number_field :quantity, value: 1, class: "form-control", min: 1 
-        .col.s6.product-submit
+        .col.s5.product-submit
           = f.hidden_field :product_id, value: product.id
           = f.submit "Add to Cart", class: "waves-effect waves-light btn" 
-      br
-      br
