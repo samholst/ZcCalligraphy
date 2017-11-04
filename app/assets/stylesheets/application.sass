@@ -10,10 +10,32 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
  *= require material_icons
  */
 
 @import "materialize"
 @import "nav_bar.sass"
+@import "products.sass"
+@import "carts.sass"
+@import "order_items.sass"
+
+h1, h2, h3, h4, h5 , h5
+  font-family: 'Gloria Hallelujah', cursive
+  
+#home-page-row
+  margin: 0px
+
+#picture-half
+  margin: 0px
+  padding: 0px
+
+#nav-bar-half
+  margin: 0px
+
+#picture-half img
+  display: none
+
+#picture-half img.active
+  display: block
+
+

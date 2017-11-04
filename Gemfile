@@ -19,6 +19,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'pry'
 end
 
 group :development do
@@ -34,4 +35,3 @@ gem 'slim', '~> 3.0', '>= 3.0.8'
 gem 'materialize-sass', '~> 0.100.2'
 gem 'material_icons', '~> 2.2', '>= 2.2.1'
 gem 'dotenv-rails'
-ruby "2.4.1"

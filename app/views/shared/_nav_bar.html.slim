@@ -1,16 +1,15 @@
 .logo.center
-  a.brand-logo href="#"
+  = link_to root_path do
     = image_tag 'zc-caligraphy-logo.jpg', width: 200 
 
-nav.nav-extended.transparent.center
+nav.nav-extended.transparent
     .nav-wrapper
       /a.button-collapse href="#" data-activates="mobile-demo"
       /  i.material-icons menu 
 
-      ul#nav-mobile.center
+      ul#nav-mobile
         li
-          a href="#"
-            | Home
+          = link_to 'Home', root_path
         li
           a href="#"
             | About
@@ -18,12 +17,9 @@ nav.nav-extended.transparent.center
           a href="#"
             | Contact
         li
-          a href="#"
-            | Products
-        li
-          a href="#"
-            | Cart (0)
-
+          = link_to 'Products', products_path
+        li.cart-text
+          = render 'shared/cart_text'
 
       /ul.side-nav#mobile-demo
       /  li

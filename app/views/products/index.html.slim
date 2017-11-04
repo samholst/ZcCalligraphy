@@ -1,0 +1,6 @@
+h3.center Products for Sale
+
+.row.product-listings
+  .col.l12
+    - @products.each do |product|
+      = render "product_row", product: product, order_item: @order_item

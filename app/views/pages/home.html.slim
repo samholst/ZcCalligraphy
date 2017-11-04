@@ -1,2 +1,24 @@
-h1 test!!
-button.waves-effect.waves-light.btn heller
+.row#home-page-row
+  /.col.s12.m12.l6#small-picture-half.show-on-med.hide-on-large-only
+  .col.s12.m12.l6#nav-bar-half
+    = render 'shared/nav_bar'
+  /.col.s12.m12.l6#picture-half.hide-on-med-and-down
+  .col.s12.m12.l6#picture-half
+    = image_tag 'edna_0.jpg', class: "active"
+    = image_tag 'edna_1.jpg'
+    = image_tag 'edna_2.jpg'
+
+javascript:
+  function swapImages(){
+    var $active = $('#picture-half .active');
+    var $next = ($('#picture-half .active').next().length > 0) ? $('#picture-half .active').next() : $('#picture-half img:first');
+
+    $active.fadeOut(function(){
+      $active.removeClass('active');
+      $next.fadeIn().addClass('active');
+    });
+  }
+
+  $(document).ready(function(){
+    setInterval('swapImages()', 5000);
+  });
