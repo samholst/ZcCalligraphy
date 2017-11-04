@@ -1,0 +1,7 @@
+<% if @order.errors.any? || @order_item.errors.any? %>
+  var errors = "<%= @order.errors.full_messages.first %>";
+  alert("There was an error, please try again later. " + errors);
+  console.log(errors);
+<% else %>
+  $(".cart-text").html("<%= escape_javascript(render 'shared/cart_text') %>");
+<% end %>

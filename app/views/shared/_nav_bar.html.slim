@@ -18,12 +18,9 @@ nav.nav-extended.transparent.center
           a href="#"
             | Contact
         li
-          a href="#"
-            | Products
-        li
-          a href="#"
-            | Cart (0)
-
+          = link_to 'Products', products_path
+        li.cart-text
+          = render 'shared/cart_text'
 
       /ul.side-nav#mobile-demo
       /  li
