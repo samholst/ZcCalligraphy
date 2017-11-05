@@ -1,11 +1,11 @@
-.col-sm-6.col-md-4
+.col-lg-4.product-column
   .card-holder
     .thumbnail
       = image_tag 'http://materializecss.com/images/sample-1.jpg', class: "card-img-top"
       .caption
         h4.card-title = product.name
         = form_for order_item, remote: true do |f| 
-          .col-sm-3
+          .col-sm-4
             = f.number_field :quantity, value: 1, class: "form-control", min: 1 
           .col-sm-5.product-submit
             = f.hidden_field :product_id, value: product.id

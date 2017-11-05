@@ -1,9 +1,9 @@
 .row.cart-row
-  .col-sm-12.cart-item
-    .col-sm-2
+  .col-sm-8.cart-item
+    .col-sm-3
       .wrapper
         = image_tag 'http://materializecss.com/images/sample-1.jpg'
-    .col-sm-8
+    .col-sm-5
       h3.title = product.name
       p
         h4
@@ -15,6 +15,10 @@
         = f.number_field :quantity, value: order_item.quantity.to_i, class: "form-control", min: 1 
         = f.hidden_field :product_id, value: product.id
         .update-and-delete
-          = f.submit "Update Quantity", class: "btn btn-link"
+          = f.submit "Update Qty", class: "btn btn-link"
           = link_to order_item, { data: { confirm: "Are you sure you wish to delete the product '#{order_item.product.name}' from your cart?" }, method: :delete, remote: true, class: "btn btn-link" } do
             = fa_icon 'trash'
+    .col-sm-2.cart-item-total-price
+      h5 
+        | Total: 
+        = number_to_currency order_item.total_price
