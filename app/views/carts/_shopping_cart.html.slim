@@ -5,10 +5,12 @@
         li = msg
 
 - if @order_items.size == 0
-  p.center
-    | There are no items in your shopping cart. Please 
-    = link_to "go back", products_path
-    |  and add some items to your cart.
+  #empty-cart.text-center
+    = fa_icon "shopping-bag"
+    h5
+      | There are no items in your shopping cart. Please 
+      = link_to "go back", products_path
+      |  and add some items to your cart.
 - else
   h1.text-center.cart-header
       | You have  
