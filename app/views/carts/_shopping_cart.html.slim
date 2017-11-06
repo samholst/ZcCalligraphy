@@ -5,20 +5,27 @@
         li = msg
 
 - if @order_items.size == 0
-  #empty-cart.text-center
-    = fa_icon "shopping-bag"
+  #empty-cart.text-center.cart-header
+    = fa_icon "shopping-bag", id: "empty-cart-icon"
     h5
-      | There are no items in your shopping cart. Please 
+      | There are no items in your shopping bag. Please 
       = link_to "go back", products_path
-      |  and add some items to your cart.
-- else
-  h1.text-center.cart-header
-      | You have  
-      => current_order.order_items.size
-      | items in your cart.
-      br
-      | Total: 
-      span[style="color: green"] = number_to_currency current_order.subtotal
+      |  and add some items to your bag.
 
+- else
+  h2.text-center.cart-header
+      | You have  
+      => pluralize(current_order.order_items.size, 'item')
+      | in your bag.
+      br
   - @order_items.each do |order_item|
       = render 'carts/cart_row', product: order_item.product, order_item: order_item, show_total: true
+
+  .row
+    .col-sm-2
+    .col-sm-8
+      h2.text-right 
+        | Subtotal: 
+        span[style="color: green"] = number_to_currency current_order.subtotal
+      button.btn.btn-success.checkout-button Checkout
+
